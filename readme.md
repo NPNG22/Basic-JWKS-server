@@ -46,18 +46,18 @@ Running with coverage in $PATH:<br>
 Here you can see screenshots of my tests with my own tests, POST and GET tests using Insomnia, and a blackbox test that you can access<br>
 Here: https://github.com/jh125486/CSCE3550/releases
 
-My own test file:<br>
+**My own test file:**<br>
 
 ![Test case images](./screenshots/coverage_report.PNG)
 
-POST test using insomnia:<br>
+**POST test using insomnia:**<br>
 
 ![POST test images](./screenshots/POST_test.PNG)
 
-GET test using insomnia:<br>
+**GET test using insomnia:**<br>
 
 ![GET test images](./screenshots/GET_test.PNG)
 
-Blackbox testing:<br>
+**Blackbox testing:**<br>
 
 ![Blackbox test images](./screenshots/Black_box_test.PNG)
