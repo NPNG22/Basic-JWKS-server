@@ -46,10 +46,17 @@ Here you can see screenshots of my tests with my own tests, POST and GET tests u
 Here: https://github.com/jh125486/CSCE3550/releases
 
 My own test file:
+
 ![Test case images](./screenshots/coverage_report.PNG)
+
 POST test using insomnia:
+
 ![POST test images](./screenshots/POST_test.PNG)
+
 GET test using insomnia:
+
 ![GET test images](./screenshots/GET_test.PNG)
+
 Blackbox testing:
+
 ![Blackbox test images](./screenshots/Black_box_test.PNG)
