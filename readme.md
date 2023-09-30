@@ -30,16 +30,16 @@ To run the server simply do:<br>
 
 ## Test
 
-I have written in total 6 test cases for the server. You can see them in test.py
+I have written in total 7 test cases for the server. You can see them in test.py
 I am using Unittest for testing and Coverage for the report
 
 Running coverage with it not in $PATH:<br>
 **python -m coverage run test**<br>
-**python -m coverage report** (to see the result)<br>
+**python -m coverage report** (to see the report)<br>
 
 Running with coverage in $PATH:<br>
 **coverage run test**<br>
-**coverage report** (to see the result)<br>
+**coverage report** (to see the report)<br>
 
 ## Result
 
