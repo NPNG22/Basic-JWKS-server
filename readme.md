@@ -59,5 +59,8 @@ Here: https://github.com/jh125486/CSCE3550/releases
 ![GET test images](./screenshots/GET_test.PNG)
 
 **Blackbox testing:**<br>
+I do not know why but when I run the blackbox, I do not see any pop up, the only think I see is this, what the console print out for me
+I'm sorry if this is not what needed, I can not figured out why the blackbox just wont show up.
+The only guess I can make is that I'm running it on Window and for some reason Window is preventing it
 
 ![Blackbox test images](./screenshots/Black_box_test.PNG)
