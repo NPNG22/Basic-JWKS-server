@@ -62,5 +62,7 @@ Here: https://github.com/jh125486/CSCE3550/releases
 I do not know why but when I run the blackbox, I do not see any pop up, the only think I see is this, what the console print out for me
 I'm sorry if this is not what needed, I can not figured out why the blackbox just wont show up.
 The only guess I can make is that I'm running it on Window and for some reason Window is preventing it
+( I did not know that a new version of the black box that fix the window issue was released, this is it properly running, I do not know why the black box is showing 
+so many problem when Insomnia testing went find)
 
 ![Blackbox test images](./screenshots/Black_box_test.PNG)
