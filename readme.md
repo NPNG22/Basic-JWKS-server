@@ -57,7 +57,7 @@ I have no ided how to automatically generate 2 keys that will expired in 1 secon
 1 minute expired <br>
 ![POST test images 1 minute](./screenshots/1_minute_expire_key.PNG)
 POST test with /auth endpoint <br>
-![POST test images sqlite](./screenshots/GET_test_sglite.PNG)
+![POST test images sqlite](./screenshots/POST_test_sqlite.PNG)
 
 **GET test using insomnia:**<br>
 
