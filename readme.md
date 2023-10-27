@@ -1,6 +1,6 @@
 # Basic JWKS server implementation
 
-This is a basic implementation of a JWKS server using Python with Flask and Cryptography
+This is a basic implementation of a JWKS server using Python with Flask and Cryptography, now with added Sqlite3 database
 
 ## Table of Contents
 
@@ -48,16 +48,21 @@ Here: https://github.com/jh125486/CSCE3550/releases
 
 **My own test file:**<br>
 
-![Test case images](./screenshots/coverage_report.PNG)
+![Test case images](./screenshots/coverage_report_sq3.PNG)
 
 **POST test using insomnia:**<br>
-
-![POST test images](./screenshots/POST_test.PNG)
+I have no ided how to automatically generate 2 keys that will expired in 1 second and 1 minute so I have created 2 end points to manually generate them <br>
+1 second expired <br>
+![POST test images 1 second](./screenshots/1_second_expire_key.PNG)
+1 minute expired <br>
+![POST test images 1 minute](./screenshots/1_minute_expire_key.PNG)
+POST test with /auth endpoint <br>
+![POST test images sqlite](./screenshots/GET_test_sglite.PNG)
 
 **GET test using insomnia:**<br>
 
-![GET test images](./screenshots/GET_test.PNG)
+![GET test images](./screenshots/GET_test_sglite.PNG)
 
 **Blackbox testing:**<br>
-
-![Blackbox test images](./screenshots/Black_box_test.PNG)
+For unknown reasons, I am not able to run the executable file that is provided. Everytime I tried to run it, a window flash on my screen for like 1 frame and then dissapear<br>
+Due to that reason, I am not able to provide a screenshot for it.<br>

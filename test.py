@@ -2,7 +2,7 @@ import unittest
 import base64
 import json
 import datetime
-from server import app
+from server import app, keys
 
 
 class TestServer(unittest.TestCase):
@@ -41,7 +41,7 @@ class TestServer(unittest.TestCase):
 
     def test_jwks_endpoint(self):
         # Test the JWKS endpoint to ensure it returns the expected structure
-        response = self.app.get('/.well-known/jwks.json')  # Update the URL
+        response = self.app.get('/.well-known/jwks.json')
         self.assertEqual(response.status_code, 200)
         jwks_data = json.loads(response.data.decode('utf-8'))
         self.assertIn('keys', jwks_data)
@@ -54,7 +54,7 @@ class TestServer(unittest.TestCase):
         credentials = base64.b64encode(
             f"{username}:{password}".encode()).decode()
         response = self.app.post(
-            '/auth?expired=true',  # Add "expired" query parameter
+            '/auth?expired=true',
             headers={'Authorization': f'Basic {credentials}'}
         )
         self.assertEqual(response.status_code, 200)
@@ -62,32 +62,23 @@ class TestServer(unittest.TestCase):
         self.assertIn('token', data)
 
     def test_jwks_expired_keys(self):
-        # Define a list of keys for testing (mock keys)
-        keys = []
-        # Test the JWKS endpoint to ensure it does not return expired keys
-        # Add an expired key to the list of keys
-        expired_key = {
-            "kid": "expired-key",
-            "kty": "RSA",
-            "alg": "RS256",
-            "use": "sig",
-            "n": "expired-key-n",
-            "e": "expired-key-e",
-            "exp": (datetime.datetime.utcnow() -
-                    datetime.timedelta(minutes=60)).timestamp()
-        }
-        keys.append(expired_key)
-        response = self.app.get('/.well-known/jwks.json')  # Update the URL
+        # Test that the JWKS endpoint does not return expired keys
+        current_time = datetime.datetime.utcnow()
+        expired_keys = [key for key in keys if datetime.datetime.strptime(
+            key["exp"], '%Y-%m-%d %H:%M:%S.%f') <= current_time]
+
+        response = self.app.get('/.well-known/jwks.json')
         self.assertEqual(response.status_code, 200)
         jwks_data = json.loads(response.data.decode('utf-8'))
         self.assertIn('keys', jwks_data)
         self.assertIsInstance(jwks_data['keys'], list)
-        # Ensure that the expired key is not present in the JWKS
-        self.assertNotIn(expired_key, jwks_data['keys'])
+
+        for expired_key in expired_keys:
+            self.assertNotIn(expired_key, jwks_data['keys'])
 
     def test_jwks_structure(self):
         # Test the structure of the JWKS returned
-        response = self.app.get('/.well-known/jwks.json')  # Update the URL
+        response = self.app.get('/.well-known/jwks.json')
         self.assertEqual(response.status_code, 200)
         jwks_data = json.loads(response.data.decode('utf-8'))
         self.assertIn('keys', jwks_data)
