@@ -64,5 +64,6 @@ POST test with /auth endpoint <br>
 ![GET test images](./screenshots/GET_test_sglite.PNG)
 
 **Blackbox testing:**<br>
-For unknown reasons, I am not able to run the executable file that is provided. Everytime I tried to run it, a window flash on my screen for like 1 frame and then dissapear<br>
-Due to that reason, I am not able to provide a screenshot for it.<br>
+![Gradebot test images](./screenshots/Project2_gradebot_test.PNG)
+I have finally found out why it was not running, I was missing the argument at the end of the run command<br>
+
