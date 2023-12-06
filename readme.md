@@ -58,8 +58,5 @@ Here: https://github.com/jh125486/CSCE3550/releases
 ![Auth test images](./screenshots/Authenticate_with_new_register_test.PNG)
 
 **Blackbox testing:**<br>
-![Gradebot test images](./screenshots/Project2_gradebot_test.PNG)
-This is the screenshot for the project 2 <br>
-I have finally found out why it was not running, I was missing the argument at the end of the run command<br>
 
 ![Gradebot test images](./screenshots/project3_gradebot_test.PNG)
