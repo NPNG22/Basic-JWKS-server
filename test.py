@@ -12,8 +12,8 @@ class TestServer(unittest.TestCase):
 
     def test_successful_authentication(self):
         # Test successful authentication
-        username = "userABC"
-        password = "password123"
+        username = "Bob"
+        password = "rbLpY40aOFyBg7nweNleJQ"
         credentials = base64.b64encode(
             f"{username}:{password}".encode()).decode()
         response = self.app.post(
@@ -26,8 +26,8 @@ class TestServer(unittest.TestCase):
 
     def test_failed_authentication(self):
         # Test authentication with invalid credentials
-        username = "userXYZ"
-        password = "invalid_password"
+        username = "userXYZ"  # Replace with an invalid test username
+        password = "invalid_password"  # Replace with an invalid password
         credentials = base64.b64encode(
             f"{username}:{password}".encode()).decode()
         response = self.app.post(
@@ -49,8 +49,8 @@ class TestServer(unittest.TestCase):
 
     def test_expired_authentication(self):
         # Test authentication with expired key and "expired" query parameter
-        username = "userABC"
-        password = "password123"
+        username = "userABC"  # Replace with a valid test username
+        password = "password123"  # Replace with the corresponding password
         credentials = base64.b64encode(
             f"{username}:{password}".encode()).decode()
         response = self.app.post(
